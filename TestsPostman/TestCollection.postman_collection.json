@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "029cad13-8194-478c-a132-65f01e9c4277",
+		"name": "TestCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42663399"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9090/ProductsTries",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/ProductsTries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"ProductsTries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/AdminProduits",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/AdminProduits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"AdminProduits"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
