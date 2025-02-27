@@ -62,4 +62,15 @@ public class ProductController {
                 .toUri();
         return ResponseEntity.created(location).build();
     }
+    @GetMapping(value="/AdminProduits")
+    public List<marges> calculerMargeProduit(){
+        List<Product> products = productDao.findAll();
+        List<marges> marge = new ArrayList<>();
+        int p_marge;
+        for(Product p : products){
+            p_marge = p.getPrix() - p.getPrixAchat();
+            marge.add(new marges(p,p_marge));
+        }
+        return marge;
+    }
 }
