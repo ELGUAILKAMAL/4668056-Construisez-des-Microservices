@@ -2,6 +2,7 @@ package com.ecommerce.micrommerce.web.controller;
 
 import com.ecommerce.micrommerce.web.dao.ProductDao;
 import com.ecommerce.micrommerce.web.dto.marges;
+import com.ecommerce.micrommerce.web.exceptions.ProduitGratuitException;
 import com.ecommerce.micrommerce.web.exceptions.ProduitIntrouvableException;
 import com.ecommerce.micrommerce.web.model.Product;
 import io.swagger.annotations.Api;
@@ -56,6 +57,9 @@ public class ProductController {
 
     @PostMapping(value = "/Produits")
     public ResponseEntity<Product> ajouterProduit(@RequestBody @Valid Product product) {
+        if(product.getPrix()==0){
+            throw new ProduitGratuitException("Le produit ne peut pas avoir un prix de vente égale à 0!");
+        }
         Product productAdded = productDao.save(product);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
